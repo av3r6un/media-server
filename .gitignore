@@ -160,7 +160,7 @@ backend/*.db
 frontend/dev/
 logs/*
 storage/downloads/*
-storage/images/*
+storage/images/
 storage/pics/*
 storage/progress/*
 storage/subtitles/*
