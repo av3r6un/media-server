@@ -159,8 +159,8 @@ cython_debug/
 /backend/*.db
 /frontend/dev/
 /logs/*
-/storage/downloads/*
-/storage/images/*
-/storage/pics/*
-/storage/progress/*
-/storage/subtitles/*
+/storage/downloads/
+/storage/pics/
+/storage/progress/
+/storage/subtitles/
+/storage/images/
