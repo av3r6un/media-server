@@ -161,7 +161,7 @@ backend/*.db
 frontend/dev
 logs/*
 storage/downloads/*
-sttorage/images/*
+storage/images/*
 storage/pics/*
 storage/progress/*
 storage/subtitles/*
