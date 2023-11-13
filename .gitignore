@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -158,7 +157,7 @@ backend/backend/config/settings.yaml
 backend/backend/settings.py
 backend/test/
 backend/*.db
-frontend/dev
+frontend/dev/
 logs/*
 storage/downloads/*
 storage/images/*
