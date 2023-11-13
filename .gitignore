@@ -150,18 +150,17 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
-apps/*
-backend/api/migrations/*
-backend/authy/migrations/*
-backend/backend/config/settings.yaml
-backend/backend/settings.py
-backend/test/
-backend/*.db
-frontend/dev/
-logs/*
-storage/downloads/*
-storage/images/
-storage/pics/*
-storage/progress/*
-storage/subtitles/*
-
+/apps/*
+/backend/api/migrations/*
+/backend/authy/migrations/*
+/backend/backend/config/settings.yaml
+/backend/backend/settings.py
+/backend/test/
+/backend/*.db
+/frontend/dev/
+/logs/*
+/storage/downloads/*
+/storage/images/*
+/storage/pics/*
+/storage/progress/*
+/storage/subtitles/*
