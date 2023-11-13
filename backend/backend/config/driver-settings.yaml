@@ -1,0 +1,10 @@
+changes: true
+pljsquality:
+  default: 480p
+  user: 1080p
+pljssubtitle:
+  default: откл.
+  user: English
+pljsuserid:
+  default: fl7fwjy2pa
+  user: qajnwp9dd8
