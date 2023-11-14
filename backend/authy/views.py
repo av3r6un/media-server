@@ -1,5 +1,5 @@
-from django_jwt_extended import create_access_token, create_refresh_token, jwt_required
 from backend.functions import ValidationError, get_user_info, get_jwt_identity, get_user, create_admin_user
+from django_jwt_extended import create_access_token, create_refresh_token, jwt_required
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse, HttpRequest
 from django.conf import settings

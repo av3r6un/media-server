@@ -1,7 +1,6 @@
 from . import ValidationError, decrypt_data
 from datetime import datetime as dt, timedelta as delta
 from django.conf import settings
-from authy.models import Users
 import sys
 import os
 
@@ -16,6 +15,7 @@ else:
 
 
 def create_admin_user():
+	from authy.models import Users
 	admin_user = Users.objects.filter(username='admin').first()
 	user_data = {'username': 'admin', 'password': ['admin', 'admin'], 'age': 99, 'email': 'crimeaninv.club@gmail.com'}
 	try:
