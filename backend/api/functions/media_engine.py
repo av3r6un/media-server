@@ -7,9 +7,13 @@ import requests
 import logging
 import ffmpeg
 import time
+import sys
 import os
 
-LOGS_FOLDER = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../../', 'logs')
+if sys.platform == 'linux':
+	LOGS_FOLDER = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../../../', 'logs')
+else:
+	LOGS_FOLDER = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../../', 'logs')
 
 logging.basicConfig(
 	filename=f'{LOGS_FOLDER}/download.log', level=logging.ERROR,
