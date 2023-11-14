@@ -87,7 +87,7 @@ class MetaEngine:
 	chromedriver = (
 		os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../../', 'apps/chromedriver.exe')
 		if sys.platform != 'linux'
-		else '/usr/bin/chromium-browser'
+		else '/usr/bin/chromedriver'
 	)
 	config_path = os.path.join(
 		os.path.abspath(os.path.dirname(__file__)), '../../', 'backend/config/driver-settings.yaml'
@@ -134,7 +134,8 @@ class MetaEngine:
 		self.opts.add_argument('--log-level=3')
 		self.opts.add_argument('--disable-3d-apis')
 		self.opts.add_argument(f'user-agent={self.user_agent}')
-		# self.opts.binary_location = self.chromedriver if sys.platform == 'linux' else None
+		if sys.platform == 'linux':
+			self.opts.binary_location = '/usr/bin/chromium-browser'
 
 	def _validate_params(self):
 		if not self.imdb_id and not self.media_type:

@@ -9,10 +9,11 @@ import os
 def create_admin_user():
 	from authy.models import Users
 	admin_user = Users.objects.filter(username='admin').first()
-	user_data = {'username': 'admin', 'password': ['admin', 'admin'], 'age': 99, 'email': 'crimeaninv.club@gmail.com'}
+	user_data = {'username': 'admin', 'password': ['admin', 'admin'], 'age': 99, 'email': 'crimeaninv.club@gmail.com',
+				 'is_admin': True}
 	try:
 		if not admin_user:
-			Users.objects.create(**user_data)
+			user = Users.objects.create(**user_data)
 		return True
 	except ValidationError as valid:
 		print(valid.message)
