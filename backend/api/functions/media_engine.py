@@ -11,7 +11,7 @@ import sys
 import os
 
 if sys.platform == 'linux':
-	LOGS_FOLDER = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../../../', 'logs')
+	LOGS_FOLDER = '/web/media.server/logs'
 else:
 	LOGS_FOLDER = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../../', 'logs')
 
