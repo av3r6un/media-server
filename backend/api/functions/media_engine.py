@@ -104,7 +104,7 @@ class MediaEngine:
 	def _cac_request(self, url, method, data: dict = None):
 		_func_params_ = {'Method': method, 'URL': url, 'RaisedBy': 'cac_request'}
 		headers = {'X-Signature': self._create_secret(), 'X-Referrer': 'MediaEngine'}
-		req = requests.request(method, f'http://192.168.3.71:8000/{url}', headers=headers, json=data, timeout=10)
+		req = requests.request(method, f'{config.CAC_DOMAIN}/{url}', headers=headers, json=data, timeout=15)
 		try:
 			r = None
 			if req.status_code == 200:
