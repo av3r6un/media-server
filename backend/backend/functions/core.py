@@ -1,8 +1,14 @@
 from . import ValidationError, decrypt_data
 from datetime import datetime as dt, timedelta as delta
 from django.conf import settings
-from jwt import decode
+import sys
 import os
+
+if sys.platform == 'linux':
+	from jwt import PyJWT
+	decode = PyJWT.decode
+else:
+	from jwt import decode
 
 
 def folder_checker(base_folder, system_folders):
