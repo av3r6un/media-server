@@ -1,5 +1,5 @@
 from django_jwt_extended import create_access_token, create_refresh_token, jwt_required
-from backend.functions import ValidationError, get_user_info, get_jwt_identity, get_user
+from backend.functions import ValidationError, get_user_info, get_jwt_identity, get_user, create_admin_user
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse, HttpRequest
 from django.conf import settings
@@ -10,6 +10,7 @@ import json
 @require_POST
 def authorize(request: HttpRequest):
 	if request.method == 'POST':
+		create_admin_user()
 		json_data = json.loads(request.body.decode('utf-8'))
 		user = Users.objects.get(username=json_data.get('username'))
 		if user:
@@ -50,7 +51,6 @@ def refresh(req: HttpRequest):
 def new_user(req: HttpRequest):
 	if req.method == 'POST':
 		json_data = json.loads(req.body.decode('utf-8'))
-		print(json_data)
 		try:
 			Users.objects.create(**json_data)
 			return JsonResponse({'status': 'success', 'message': 'Пользователь успешно создан'})
