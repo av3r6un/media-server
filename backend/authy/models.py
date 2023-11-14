@@ -134,7 +134,7 @@ class Users(md.Model):
 	@staticmethod
 	def _validate_age(birthday):
 		if type(birthday) == int or birthday.isdigit():
-			if len(birthday) == 2:
+			if len(birthday) == 2 or type(birthday) == int:
 				return birthday
 			else:
 				raise ValidationError('birthday', 'too_much')
