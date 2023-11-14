@@ -152,6 +152,7 @@ cython_debug/
 
 /apps/*
 /backend/api/migrations/*
+/backend/api/functions/convertion.py
 /backend/authy/migrations/*
 /backend/backend/config/settings.yaml
 /backend/backend/settings.py
