@@ -133,13 +133,14 @@ class Users(md.Model):
 
 	@staticmethod
 	def _validate_age(birthday):
-		if type(birthday) == int or birthday.isdigit():
-			if len(birthday) == 2 or type(birthday) == int:
-				return birthday
-			else:
+		if type(birthday) == int and birthday > 99:
+			raise ValidationError('birthday', 'too_much')
+		if type(birthday) == str and birthday.isdigit():
+			if len(birthday) > 2:
 				raise ValidationError('birthday', 'too_much')
-		else:
+		if type(birthday) != int and type(birthday) != str:
 			raise ValidationError('birthday', 'wrong_format')
+		return birthday
 
 	@staticmethod
 	def _validate_voice(voice_id):
