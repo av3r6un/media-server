@@ -1,17 +1,9 @@
 from . import ValidationError, decrypt_data
 from datetime import datetime as dt, timedelta as delta
 from django.conf import settings
+from jwt import decode
 import sys
 import os
-
-if sys.platform == 'linux':
-	from jwt import JWT
-
-	def decode(message, key, algorithms):
-		jwt = JWT()
-		return jwt.decode(message, key, algorithms)
-else:
-	from jwt import decode
 
 
 def create_admin_user():
