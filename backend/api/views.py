@@ -219,7 +219,8 @@ def user_info(req: HttpRequest):
 	queue = Queue.objects.filter(user_uid=current_user.uid).first()
 	queue_list = queue.pretty()['queue'][:5] if queue else []
 	response = {'history': history, 'downloads': user_dwn[:5], 'queue': queue_list}
-	extra = {'voices': config.VOICES, 'user_info': current_user.json(), 'queue_id': queue.id}
+	extra = {'voices': config.VOICES, 'user_info': current_user.json()}
+	extra.update({'queue': queue.id}) if queue else None
 	return JsonResponse({'status': 'success', 'body': response, 'extra': extra})
 
 
