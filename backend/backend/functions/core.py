@@ -5,8 +5,11 @@ import sys
 import os
 
 if sys.platform == 'linux':
-	from jwt import PyJWT
-	decode = PyJWT.decode
+	from jwt import JWT
+
+	def decode(message, key, algorithms):
+		jwt = JWT()
+		return jwt.decode(message, key, algorithms)
 else:
 	from jwt import decode
 
